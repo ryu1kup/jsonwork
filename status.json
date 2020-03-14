@@ -1,0 +1,39 @@
+{
+    "members": [
+        {
+            "name":"Yuji Yamazaki",
+            "status":"inactive",
+            "update_time":"Mar  6 18:22:02"
+        },
+        {
+            "name":"Atsuhiko Ochi",
+            "status":"inactive",
+            "update_time":"None"
+        },
+        {
+            "name":"Kentaro Miuchi",
+            "status":"inactive",
+            "update_time":"None"
+        },
+        {
+            "name":"Hiroaki Hibi",
+            "status":"inactive",
+            "update_time":"Mar  7 20:27:30"
+        },
+        {
+            "name":"Keita Mizukoshi",
+            "status":"inactive",
+            "update_time":"Mar  7 20:25:02"
+        },
+        {
+            "name":"Hikaru Setsuda",
+            "status":"inactive",
+            "update_time":"None"
+        },
+        {
+            "name":"Kosuke Sueda",
+            "status":"inactive",
+            "update_time":"Mar  6 12:26:38"
+        }
+    ]
+}
