@@ -2,36 +2,43 @@
     "members": [
         {
             "name":"Yuji Yamazaki",
+            "position": "Professor",
             "status":"inactive",
             "update_time":"Mar  6 18:22:02"
         },
         {
             "name":"Atsuhiko Ochi",
+            "position": "Associate Professor",
             "status":"inactive",
             "update_time":"None"
         },
         {
             "name":"Kentaro Miuchi",
+            "position": "Associate Professor",
             "status":"inactive",
             "update_time":"None"
         },
         {
             "name":"Hiroaki Hibi",
+            "position": "D1",
             "status":"inactive",
             "update_time":"Mar  7 20:27:30"
         },
         {
             "name":"Keita Mizukoshi",
+            "position": "D1",
             "status":"inactive",
             "update_time":"Mar  7 20:25:02"
         },
         {
             "name":"Hikaru Setsuda",
+            "position": "M2",
             "status":"inactive",
             "update_time":"None"
         },
         {
             "name":"Kosuke Sueda",
+            "position": "M1",
             "status":"inactive",
             "update_time":"Mar  6 12:26:38"
         }

@@ -3,103 +3,80 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Our superheroes</title>
+    <title>Kobe Particle Physics Lab. Members</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <body>
+    <link href="style.css" rel="stylesheet" type="text/css">
 
-      <header>
+    <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+    <script>const __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
 
-      </header>
+</head>
 
-      <section>
+    <body>
 
-      </section>
+        <div id='mainWrapper'>
 
-    <script>
-    const header = document.querySelector('header');
-    const section = document.querySelector('section');
+            <section id='offer'>
+                <h2>神戸大学粒子物理学研究室</h2>
+                <p>開発版v0.1 Mar. 2020</p>
+            </section>
 
+            <div id='content'>
+                <section class='mainContent'>
+                    <div class='productRow'>
+                        <script>
+                            const section = document.querySelector('section');
+                            let requestURL = "https://raw.githubusercontent.com/ryu1kup/jsonwork/master/status.json"
+                            let request = new XMLHttpRequest();
+                            request.open('GET', requestURL);
 
-    let requestURL = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
-    let request = new XMLHttpRequest();
-    request.open('GET', requestURL);
+                            request.responseType = 'json';
+                            request.send();
 
-    request.responseType = 'json';
-    request.send();
+                            request.onload = function() {
+                                const member_status = request.response;
+                                showMemberStatus(member_status);
+                            }
 
-    let request1URL = "https://raw.githubusercontent.com/ryu1kup/json_test/master/status.json"
-    let request1 = new XMLHttpRequest();
-    request1.open('GET', request1URL);
+                            function showMemberStatus(json){
+                                const members = json['members'];
+                                for (let i = 0; i < members.length; i++) {
+                                    const myArticle = document.createElement('article');
+                                    myArticle.className = 'productInfo';
 
-    request1.responseType = 'json';
-    request1.send();
+                                    const myDiv = document.createElement('div');
+                                    const myImg = document.createElement('img');
+                                    myImg.src = '200x200.png';
+                                    myImg.alt = 'sample';
 
-    request.onload = function() {
-        const superHeroes = request.response;
-        populateHeader(superHeroes);
-        showHeroes(superHeroes);
+                                    const myPara0 = document.createElement('p');
+                                    myPara0.className = 'price';
 
-        const member_status = request1.response;
-        showMemberStatus(member_status)
-    }
+                                    const myPara1 = document.createElement('p');
+                                    myPara1.className = 'productContent';
 
-    function populateHeader(jsonObj) {
-        const myH1 = document.createElement('h1');
-        myH1.textContent = jsonObj['squadName'];
-        header.appendChild(myH1);
+                                    //const myPara2 = document.createElement('p');
+                                    //myPara2.className = 'buyButton';
 
-        const myP = document.createElement('p');
-        myP.textContent = 'Hometown: '
-                        + jsonObj['homeTown']
-                        + ' // Formed: '
-                        + jsonObj['formed'];
-        header.appendChild(myP);
-    }
+                                    myPara0.textContent = members[i].name;
+                                    myPara1.textContent = members[i].position;
+                                    //myPara2.textContent = members[i].status;
 
-    function showHeroes(jsonObj){
-        const heroes = jsonObj['members']
+                                    myDiv.appendChild(myImg);
+                                    myArticle.appendChild(myDiv);
+                                    myArticle.appendChild(myPara0);
+                                    myArticle.appendChild(myPara1);
+                                    //myArticle.appendChild(myPara2);
 
-        for (let i = 0; i < heroes.length; i++) {
-            const myArticle = document.createElement('article');
-            const myH2 = document.createElement('h2');
-            const myPara1 = document.createElement('p');
-            const myPara2 = document.createElement('p');
-            const myPara3 = document.createElement('p');
-            const myList = document.createElement('ul');
-
-            myH2.textContent = heroes[i].name;
-            myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
-            myPara2.textContent = 'Age: ' + heroes[i].age;
-            myPara3.textContent = 'Superpowers:';
-
-            const superPowers = heroes[i].powers;
-            for (let j = 0; j < superPowers.length; j++) {
-                const listItem = document.createElement('li');
-                listItem.textContent = superPowers[j];
-                myList.appendChild(listItem);
-            }
-
-            myArticle.appendChild(myH2);
-            myArticle.appendChild(myPara1);
-            myArticle.appendChild(myPara2);
-            myArticle.appendChild(myPara3);
-            myArticle.appendChild(myList);
-
-            section.appendChild(myArticle);
-        }
-    }
-
-    function showMemberStatus(json){
-        const members = json['members'];
-
-        for (let i = 0; i < members.length; i++) {
-            console.log(members[i].name)
-        }
-    }
-    </script>
-  </body>
+                                    section.appendChild(myArticle);
+                                }
+                            }
+                        </script>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
 </html>
